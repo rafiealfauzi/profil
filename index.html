@@ -49,3 +49,22 @@
     </div>
   </div>
 </nav>
+<center>
+    <div class="container">
+  <div class="row mt-5">
+    <?php while ($post = mysqli_fetch_assoc($query)) { ?>
+      <div class="col-md-10 mb-4 mx-auto">
+        <div class="card" style="width: 25rem;">
+        <div class="zoom">
+          <img src="images/<?= $post['foto'] ?>" alt="" width="100" class="card-img-top" alt="...">
+          </div>
+          <div class="card-body">
+            <h5 class="card-title"><?= $post['lokasi'] ?></h5>
+            <p class="card-text"><?= $post['caption'] ?></p>
+            <a class = "btn btn-warning" data-bs-toggle="modal" data-bs-target="#editModal<?= $post['no'] ?>"><i class="bi bi-pencil-square"></i></a>
+            <a href="hapus.php?no=<?= $post['no'] ?>" class = "btn btn-danger"><i class="bi bi-trash-fill"></i></a><br><br>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
